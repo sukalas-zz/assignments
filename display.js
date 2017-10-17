@@ -1,15 +1,18 @@
 var h = new Helpers(); //initialize helpers
 
-window.addEventListener("scroll", enchanceVis);
+window.addEventListener("scroll", toggleNav);
 
-function effects(){
-	h.q("i").style.opacity = 0;
-	h.q("i").style.display = "none";
-	h.i("app").style.visibility = "visible";
-	h.i("app").style.opacity = 1;
+function fadeIn(el){
+	h.q(`${el}`).style.display = "block";
+	h.q(`${el}`).style.opacity = 1;
 }
 
-function enchanceVis() {
+function fadeOut(el){
+	h.q(`${el}`).style.opacity = 0;
+	h.q(`${el}`).style.display = "none";
+}
+
+function toggleNav() {
 	let obj = h.i('list');
 	let navBar = h.i('nav');
 	let navItems = h.cl('nav-item');
