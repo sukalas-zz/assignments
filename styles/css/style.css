@@ -22,6 +22,7 @@ i.fa.fa-circle-o-notch {
   border-top-right-radius: 0rem !important; }
 
 .list-group-item {
+  background-color: rgba(177, 196, 185, 0.1);
   border-top-left-radius: .25rem !important;
   border-top-right-radius: .25rem !important; }
 
