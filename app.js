@@ -19,7 +19,7 @@ let main = function(){
 	}
 		
 	function processList (event) {
-		let min = 0, max = 20;
+		let min = 0, max = 40;
 		let prevDataList = h.q(`.list-group`); // Grab the parent of the list
 		fadeIn(`i`);
 		while (prevDataList.firstChild) prevDataList.removeChild(prevDataList.firstChild) //Remove previous parsed data list
