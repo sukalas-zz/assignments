@@ -1,0 +1,10 @@
+i{
+	opacity: 1;
+	transition: .25s opacity;
+}
+i.fa.fa-circle-o-notch{
+    position: absolute;
+    top: 46.5%;
+    left: 46.5%;
+    transform: $translation;            
+}

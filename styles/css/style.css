@@ -1,0 +1,62 @@
+i {
+  opacity: 1;
+  transition: .25s opacity; }
+
+i.fa.fa-circle-o-notch {
+  position: absolute;
+  top: 46.5%;
+  left: 46.5%;
+  transform: translate(-50%, -50%); }
+
+#app {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .25s; }
+
+.navbar {
+  background-color: rgba(255, 87, 0, 0.35);
+  border: 1px solid rgba(0, 0, 0, 0.1); }
+
+.list-group-item:first-child {
+  border-top-left-radius: 0rem !important;
+  border-top-right-radius: 0rem !important; }
+
+.list-group-item {
+  border-top-left-radius: .25rem !important;
+  border-top-right-radius: .25rem !important; }
+
+span.right {
+  position: absolute;
+  right: 0px;
+  float: right; }
+
+a {
+  color: rgba(0, 0, 0, 0.5);
+  transition: .2s color; }
+
+a:hover {
+  color: black; }
+
+.nav-item {
+  color: rgba(0, 0, 0, 0.5);
+  transition: .2s color; }
+
+.nav-item:hover {
+  color: black; }
+
+.navScrolled {
+  background-color: rgba(255, 87, 0, 0.95); }
+
+.whiteFont {
+  color: rgba(255, 255, 255, 0.5) !important; }
+
+.whiteFont:hover {
+  color: rgba(255, 255, 255, 0.75) !important; }
+
+.darkFont {
+  color: rgba(0, 0, 0, 0.5) !important; }
+
+.darkFont:hover {
+  color: rgba(0, 0, 0, 0.75) !important; }
+
+/*# sourceMappingURL=style.css.map */
