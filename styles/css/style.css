@@ -1,6 +1,6 @@
 i {
   opacity: 1;
-  transition: .15s opacity; }
+  transition: .25s opacity; }
 
 i.fa.fa-circle-o-notch {
   position: absolute;
@@ -8,13 +8,30 @@ i.fa.fa-circle-o-notch {
   left: 46.5%;
   transform: translate(-50%, -50%); }
 
+.container-fluid {
+  min-width: 720px; }
+
+a {
+  color: rgba(0, 0, 0, 0.65) !important;
+  transition: .2s color; }
+
+a:hover {
+  color: black !important; }
+
+p {
+  display: inline-block;
+  margin-bottom: 0rem !important; }
+
+i {
+  cursor: pointer; }
+
 #app {
-  opacity:0;
-  transition: opacity .15s; 
-}
+  display: none;
+  opacity: 0;
+  transition: opacity .25s; }
 
 .navbar {
-  background-color: rgba(255, 87, 0, 0.35);
+  background-color: rgba(255, 87, 0, 0.45);
   border: 1px solid rgba(0, 0, 0, 0.1); }
 
 .list-group-item:first-child {
@@ -26,38 +43,56 @@ i.fa.fa-circle-o-notch {
   border-top-left-radius: .25rem !important;
   border-top-right-radius: .25rem !important; }
 
+.subtitle {
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  float: left; }
+
 span.right {
   position: absolute;
-  right: 0px;
-  float: right; }
+  right: 0px; }
 
-a {
-  color: rgba(0, 0, 0, 0.5);
-  transition: .2s color; }
-
-a:hover {
-  color: black; }
-
-.nav-item {
-  color: rgba(0, 0, 0, 0.5);
-  transition: .2s color; }
-
-.nav-item:hover {
-  color: black; }
+span.number {
+  margin-left: -10px; }
 
 .navScrolled {
   background-color: rgba(255, 87, 0, 0.95); }
 
+#login {
+  transition: 0.2s color;
+  cursor: pointer; }
+
 .whiteFont {
-  color: rgba(255, 255, 255, 0.5) !important; }
+  color: rgba(255, 255, 255, 0.65) !important; }
 
 .whiteFont:hover {
-  color: rgba(255, 255, 255, 0.75) !important; }
+  color: white !important; }
 
 .darkFont {
-  color: rgba(0, 0, 0, 0.5) !important; }
+  color: rgba(0, 0, 0, 0.65) !important; }
 
 .darkFont:hover {
-  color: rgba(0, 0, 0, 0.75) !important; }
+  color: black !important; }
+
+user {
+  font-weight: 500; }
+
+footer {
+  text-align: center;
+  padding: 15px; }
+
+footer:hover {
+  text-decoration: underline; }
+
+.navbar-toggle {
+  position: relative;
+  float: right;
+  padding: 9px 10px;
+  margin-top: 8px;
+  margin-right: 15px;
+  margin-bottom: 8px;
+  background-color: red;
+  background-image: none;
+  border-radius: 4px; }
 
 /*# sourceMappingURL=style.css.map */

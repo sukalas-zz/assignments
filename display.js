@@ -15,8 +15,10 @@ function fadeOut(el){
 function toggleNav() {
 	let obj = h.i('list');
 	let navBar = h.i('nav');
-	let navItems = h.cl('nav-item');
+	let navItems = h.q('.navbar-nav');
 	let rect = obj.getBoundingClientRect();
-	navBar.className = (rect.top <=0) ? `navbar navbar-expand-md navbar-light sticky-top navScrolled` : `navbar navbar-expand-md navbar-light sticky-top`;
-	for(item of navItems){item.className = (rect.top <=0) ? `whiteFont nav-item nav-link` : `darkFont nav-item nav-link`;}
+	navBar.className = (rect.top <=0) ? `navbar navbar-expand-lg navbar-light darken-4 sticky-top navScrolled` : `navbar navbar-expand-lg navbar-light orange sticky-top`;
+
+	for(item of navItems.children){item.className = (rect.top <=0) ? `whiteFont nav-link` : `darkFont nav-link `;}
+	h.i('login').className = (rect.top <=0) ? `whiteFont` : `darkFont`;
 }

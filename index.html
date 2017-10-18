@@ -1,32 +1,56 @@
 <html>
 	<head>
 		<title>Werkspot Hacker News</title>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+
+		<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+		
 		<script src="https://use.fontawesome.com/dd54656f9d.js"></script>
+		
 		<link rel="stylesheet" href="styles/css/style.css">
-		<link rel="icon" href="images/favicon.png" type="image/png" />
+		<link rel="icon" href="favicon.png" type="image/png" />
 		<link rel="shortcut icon" href="favicon.ico" />
 	</head>
 	<body onload="main()">
 		<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" aria-hidden="true"><span class="sr-only">Loading....</span></i>
-		<div id="app" class="container">
-			<nav class="navbar navbar-expand-md navbar-light sticky-top" id="nav">
-			    <a class="navbar-brand" href="#"><i class="fa fa-hacker-news"></i> Hacker News</a>		
-				    <div class="navbar-nav">
-						<a class="nav-item nav-link" href="#newstories">new</a>
-						<a class="nav-item nav-link" href="#newcomments">comments</a>
-						<a class="nav-item nav-link" href="#show">show</a>
-						<a class="nav-item nav-link" href="#ask">ask</a>
-						<a class="nav-item nav-link" href="#jobs">jobs</a>
-						<a class="nav-item nav-link" href="#submit">submit</a>
-					</div>
-					<span class="right"><a class="nav-item nav-link" href="#/login">login</a></span>
+		<div id="app" class="container-fluid col-sm-10 col-md-10 col-lg-8">
+			<!--Navbar-->
+			<nav class="navbar navbar-expand-lg navbar-light orange sticky-top" role="navigation" id="nav">
+			  <a class="navbar-brand" href="#"><i class="fa fa-hacker-news"></i><strong> Hacker News</strong></a>
+			
+			    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#hackernav" aria-controls="hackernav"
+			        aria-expanded="false" aria-label="Toggle navigation">
+			        <span class="navbar-toggler-icon"></span>
+			    </button>
+
+			    <div class="collapse navbar-collapse" id="hackernav">
+			        <div class="navbar-nav mr-auto">
+							<a class="nav-item nav-link" href="#newstories">new</a>
+							<a class="nav-item nav-link" href="#newcomments">comments</a>
+							<a class="nav-item nav-link" href="#show">show</a>
+							<a class="nav-item nav-link" href="#ask">ask</a>
+							<a class="nav-item nav-link" href="#jobs">jobs</a>
+							<a class="nav-item nav-link" href="#submit">submit</a>
+			        </div>
+			        <span id="login">
+			           login
+			        </span>
+			    </div>
 			</nav>
+			
 			<ul class="list-group" id="list">
 			</ul>
+			<footer>
+				<i class="fa fa-arrow-down fa-2x text-center" aria-hidden="true"></i>
+			</footer>
 		</div>
 		<script src="./helpers.js"></script>
 		<script src="./app.js"></script>
+		<script src="./render.js"></script>
 		<script src="./display.js"></script>
-	</body>
 </html>
