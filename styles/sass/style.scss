@@ -2,6 +2,9 @@
 @import 'icons';
 @import 'media';
 
+div{
+	line-height:1.35em;
+}
 a{
 	color:$darkFont; transition: .2s color;
 }
@@ -10,12 +13,13 @@ a:hover{
 	color:$darkFontHover;
 }
 p{
-	display:inline-block;
+	// display:inline-block;
 	margin-bottom: 0rem !important;
 }
 i{
 	cursor:pointer;
 }
+
 #app{
 	display:none;
 	opacity: 0;
@@ -25,6 +29,9 @@ i{
 	background-color: $navBgColor;
 	border:1px solid rgba(0,0,0,.1);
 }
+.disabled{color:$disabled;}
+.disabled:hover{color:$disabled;}
+
 .list-group-item:first-child{
     border-top-left-radius: 0rem !important;
     border-top-right-radius: 0rem !important;
@@ -37,6 +44,7 @@ i{
 .subtitle{
 	color:$subtitleBase;
 	font-size:$subtitleFontSize;
+	margin-top:7px;
 	float:left;
 }
 span.right{
@@ -82,4 +90,37 @@ footer:hover{
     background-color:red;
     background-image:none;
     border-radius:4px
+}
+
+.askText{
+
+}
+.askText:hover{
+	display:inline-block;
+}
+
+.text-truncate{
+	transition: .25s all;
+	// white-space:wrap !important;
+}
+
+.list-group {
+    list-style: decimal inside;
+}
+
+.list-group-item {
+    display: list-item;
+}
+
+.questions{
+	top:-1.2em;
+	left:2em;
+}
+.comments{
+	@extend .questions;
+	top:-1.27em !important;;
+}
+.stories{
+	@extend .questions;
+	top: -1.125em !important;
 }
