@@ -3,17 +3,18 @@
 let main = function(){
 	loadPage();
 	window.onhashchange = loadPage;
-	var more = false;
 
-function loadPage(event, rpp){
-	num = 0; // Reinitialize global var Counter 
+function loadPage(event, rpp, more){
+	// num = 0; // Reinitialize global var Counter 
+	let m = more;
 	let hashUrl = location.hash.toString();
 	const url = hashUrl.substr(1, hashUrl.length);
 	fadeOut(`footer`);
-	getter(`${url}`);
+	getter(`${url}`, m);
 }
-// h.q('footer').onclick = (e) => {
-// 	rpp = {min:rpp.max, max:rpp.max+25};
-// 	loadPage(rpp);
-// };
+h.q('footer').onclick = (e) => {
+	rpp = {min:rpp.max, max:rpp.max+25};
+	loadPage(rpp);
+	more = true;
+};
 }

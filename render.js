@@ -1,11 +1,10 @@
 //Global Variables
 var data = new Array(); // Global array that holds the items
-var rpp = {min:0, max:25}; // results per page object holder
-var more = false; // Boolean that checks if more button has been pressed
+let rpp = {min:0, max:25}; // results per page object holder
 var num = 0; // List counter Initializer
 let type;
 let itemId;
-
+let more = false;
 
 function parser(event){
 	let itemsList = JSON.parse(event.currentTarget.response);
@@ -18,11 +17,11 @@ function processList(event) {
 	parser(event);
 }
 
-function getter(string, username){
+function getter(string, m){
 	"use strict";
 	num = 0;
 	const prefixURL = `https://hacker-news.firebaseio.com/v0`;
-	
+	more = m;
 	const api = {
 		topstories:{
 			url:`${prefixURL}/topstories.json`,
@@ -81,7 +80,7 @@ function getter(string, username){
 			type = api.topstories.type; // Top stories is the default and homepage
 		}
 	}else{
-		console.log(`We are entering a specific item page`)
+		// console.log(`We are entering a specific item page`)
 		const id = string.substr(string.indexOf("?")+1, string.length) // Get the ID after the questionmark
 		urlReq = `https://hacker-news.firebaseio.com/v0/item/${id}/kids.json`;
 		type = `items`;

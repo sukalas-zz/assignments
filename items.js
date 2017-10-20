@@ -68,8 +68,7 @@ function processItem (event) {
 
 	fadeOut(`i`);
 	fadeIn(`#app`);
-	
-	if(rpp.max <= num){
+	if(rpp.max >= num){
 		fadeIn(`footer`);
 	}
 }

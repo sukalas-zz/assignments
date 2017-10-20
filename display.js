@@ -21,4 +21,8 @@ function toggleNav() {
 
 	for(item of navItems.children){item.className = (rect.top <=0) ? `whiteFont nav-link` : `darkFont nav-link `;}
 	h.i('login').className = (rect.top <=0) ? `whiteFont` : `darkFont`;
-}
+
+	 h.q(`#submit`).className = (rect.top <=0) ? 'nav-item nav-link disabledWhite' : 'nav-item nav-link disabled';
+	 h.q(`#comments`).className = (rect.top <=0) ? 'nav-item nav-link disabledWhite' : 'nav-item nav-link disabled';
+	 h.q(`#login`).className = (rect.top <=0) ? 'nav-item nav-link disabledWhite' : 'nav-item nav-link disabled';
+};
