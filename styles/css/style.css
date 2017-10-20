@@ -8,10 +8,10 @@ i.fa.fa-circle-o-notch {
   left: 46.5%;
   transform: translate(-50%, -50%); }
 
-.container {
-  min-width: 500px; }
+@media (max-width: 1080px) {
+  .container {
+    width: 100%; }
 
-@media (max-width: 978px) {
   h6 {
     font-size: 1.2rem;
     line-height: 1.5rem; }
@@ -34,6 +34,13 @@ i.fa.fa-circle-o-notch {
     padding-right: 1rem;
     padding-bottom: 0.5rem;
     padding-left: 0.75rem; }
+
+  .questions, .comments, .stories {
+    top: -1.2em;
+    left: 2em; }
+
+  .comments {
+    top: -1.27em !important; }
 
   .stories {
     top: -1.125em !important; } }

@@ -1,9 +1,8 @@
-.container{
-	min-width:500px;
-}
 
-@media (max-width: 978px) {
-
+@media (max-width: 1080px) {
+	.container{
+		width:100%;
+	}
 	h6{
 		font-size:1.2rem;
 		line-height: 1.5rem;
@@ -31,13 +30,13 @@
 	    padding-left: 0.75rem;
 	}
 
-	// .questions{
-	// 	top:-1.2em;
-	// 	left:2em;
-	// }
-	// .comments{
-	// 	top:-1.27em !important;;
-	// }
+	.questions{
+		top:-1.2em;
+		left:2em;
+	}
+	.comments{
+		top:-1.27em !important;;
+	}
 	.stories{
 		top: -1.125em !important;
 	}
