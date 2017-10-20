@@ -9,7 +9,7 @@ i.fa.fa-circle-o-notch {
   transform: translate(-50%, -50%); }
 
 .container {
-  min-width: 720px; }
+  min-width: 500px; }
 
 @media (max-width: 978px) {
   .container {
