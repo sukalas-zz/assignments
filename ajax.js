@@ -3,7 +3,7 @@ function ajax(url){
 	xmlHttp.onreadystatechange = function() {
 	    if (xmlHttp.readyState == 4 && xmlHttp.status == 200){
 	    	respArr = xmlHttp.responseText;
-	    	console.log(respArr)
+	    	// console.log(respArr) 
 	    }
 	}
 	xmlHttp.addEventListener('load', (respArr) => {

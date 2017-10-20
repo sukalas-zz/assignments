@@ -87,7 +87,7 @@ function getter(string, username){
 		type = `items`;
 	}
 	
-	console.log(`Corresponding url: ${urlReq}`)
+	// console.log(`Corresponding url: ${urlReq}`)
 	ajax(urlReq)
 }
 

@@ -11,6 +11,18 @@ i.fa.fa-circle-o-notch {
 .container-fluid {
   min-width: 720px; }
 
+@media (max-width: 978px) {
+  .container {
+    padding: 0;
+    margin: 0; }
+
+  body {
+    padding: 0; }
+
+  .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0; } }
 div {
   line-height: 1.35em; }
 
@@ -30,6 +42,8 @@ i {
 #app {
   display: none;
   opacity: 0;
+  margin: 0;
+  padding: 0;
   transition: opacity .25s; }
 
 .navbar {
@@ -116,14 +130,14 @@ footer:hover {
 .list-group-item {
   display: list-item; }
 
-.questions, .stories, .comments {
+.questions, .comments, .stories {
   top: -1.2em;
   left: 2em; }
 
-.stories {
-  top: -1.1em; }
-
 .comments {
-  top: -1.27em; }
+  top: -1.27em !important; }
+
+.stories {
+  top: -1.125em !important; }
 
 /*# sourceMappingURL=style.css.map */

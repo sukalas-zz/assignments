@@ -11,7 +11,7 @@ function processItem (event) {
 	try{ if(item.url) url = item.url }catch(err){ item.url = 'hell'}
 	try{ if(item.title) title = item.title }catch(err){}
 	try{ item.text = cleanText = item.text.replace(/(<p[^>]+?>|<p>|<\/p>)/img, "");}catch(err){item.text = 'So much emptyness...';}
-	console.log(item)
+	// console.log(item)
 
 	if(type === `ask`){
 		prevQuestion = title ;
@@ -22,7 +22,7 @@ function processItem (event) {
 					${item.text}
 					<br>
 					<span class="subtitle"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp; | &nbsp;${item.score} points &nbsp; | &nbsp; by&nbsp;<user>
-					<a href="#user?${item.id}"> ${item.by}</a></user> &nbsp; | &nbsp;<a href="#comments?${item.id}"><i class="fa fa-comment-o" title="tap for comment area" aria-hidden="true"></i></a> ${comments}</span>
+					<a href="#user?${item.id}">${item.by}</a></user> &nbsp; | &nbsp;<a href="#comments?${item.id}"><i class="fa fa-comment-o" title="tap for comment area" aria-hidden="true"></i></a> ${comments}</span>
 				</div>
 		</li>`; 
 	}
@@ -62,8 +62,6 @@ function processItem (event) {
 					<a href="#user?${item.id}"> ${item.by}</a></user> &nbsp; | &nbsp;<a href="#comments?${item.id}"><i class="fa fa-comment-o" title="tap for comment area" aria-hidden="true"></i></a> ${comments}</span>
 				</div>
 		</li>`; 
-
-
 	}
 
 	list.innerHTML += html;

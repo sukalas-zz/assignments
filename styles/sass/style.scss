@@ -23,6 +23,8 @@ i{
 #app{
 	display:none;
 	opacity: 0;
+	margin:0;
+	padding:0;
 	transition: opacity .25s;
 }
 .navbar{
