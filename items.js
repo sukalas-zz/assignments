@@ -21,7 +21,7 @@ function processItem (event) {
 					<h6>${title}</h6>
 					${item.text}
 					<br>
-					<span class="subtitle"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp; | &nbsp;${item.score} points &nbsp; | &nbsp; by &nbsp;<user>
+					<span class="subtitle"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp; | &nbsp;${item.score} points &nbsp; | &nbsp; by&nbsp;<user>
 					<a href="#user?${item.id}"> ${item.by}</a></user> &nbsp; | &nbsp;<a href="#comments?${item.id}"><i class="fa fa-comment-o" title="tap for comment area" aria-hidden="true"></i></a> ${comments}</span>
 				</div>
 		</li>`; 
