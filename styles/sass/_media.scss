@@ -1,4 +1,4 @@
-.container-fluid{
+.container{
 	min-width:720px;
 }
 
@@ -10,8 +10,12 @@
 
     body {
       padding:0;
+      font-size:20px;
+      line-height:1.5em;
     }
+	.navbar{
 
+	}
     .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
       margin-left: 0;
       margin-right: 0;

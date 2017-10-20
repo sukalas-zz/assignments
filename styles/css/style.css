@@ -8,7 +8,7 @@ i.fa.fa-circle-o-notch {
   left: 46.5%;
   transform: translate(-50%, -50%); }
 
-.container-fluid {
+.container {
   min-width: 720px; }
 
 @media (max-width: 978px) {
@@ -17,14 +17,16 @@ i.fa.fa-circle-o-notch {
     margin: 0; }
 
   body {
-    padding: 0; }
+    padding: 0;
+    font-size: 20px;
+    line-height: 1.5em; }
 
   .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
     margin-left: 0;
     margin-right: 0;
     margin-bottom: 0; } }
 div {
-  line-height: 1.35em; }
+  line-height: 1.33em; }
 
 a {
   color: rgba(0, 0, 0, 0.65) !important;
@@ -42,13 +44,15 @@ i {
 #app {
   display: none;
   opacity: 0;
-  margin: 0;
-  padding: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
   transition: opacity .25s; }
 
 .navbar {
   background-color: rgba(255, 87, 0, 0.45);
-  border: 1px solid rgba(0, 0, 0, 0.1); }
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  z-index: 9999; }
 
 .disabled {
   color: rgba(0, 0, 0, 0.35) !important; }

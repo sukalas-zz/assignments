@@ -22,7 +22,7 @@ function processItem (event) {
 					${item.text}
 					<br>
 					<span class="subtitle"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp; | &nbsp;${item.score} points &nbsp; | &nbsp; by&nbsp;<user>
-					<a href="#user?${item.id}">${item.by}</a></user> &nbsp; | &nbsp;<a href="#comments?${item.id}"><i class="fa fa-comment-o" title="tap for comment area" aria-hidden="true"></i></a> ${comments}</span>
+					<a href="">${item.by}</a></user> &nbsp; | &nbsp;<a href="#comments?${item.id}"><i class="fa fa-comment-o" title="tap for comment area" aria-hidden="true"></i></a> ${comments}</span>
 				</div>
 		</li>`; 
 	}
@@ -31,7 +31,7 @@ function processItem (event) {
 		<li class='list-group-item'>
 			<div class="col-11 stories" title="tap for full story">
 				<a href="${url}" target="_empty"> <h6>${title}</h6></a>
-				<span class="subtitle"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp; | &nbsp;${item.score} points &nbsp; | &nbsp; by <user><a href="#user?${item.id}">
+				<span class="subtitle"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp; | &nbsp;${item.score} points &nbsp; | &nbsp; by <user><a href="">
 				${item.by}</a></user> &nbsp; | &nbsp; <a href="#comments?${item.id}"><i class="fa fa-comment-o" aria-hidden="true"></i></a> ${comments}</span>
 			</div>
 		</li>`; 
@@ -48,7 +48,7 @@ function processItem (event) {
 					${item.text}
 					<br>
 					<span class="subtitle"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp; | &nbsp;<small>comment by</small>&nbsp;<user>
-					<a href="#user?${item.id}"> ${item.by}</a></user> &nbsp; | &nbsp;<a href="#comments?${item.id}"><i class="fa fa-comment-o" aria-hidden="true"></i></a> ${comments}</span>
+					<a href="">${item.by}</a></user> &nbsp; | &nbsp;<a href="#comments?${item.id}"><i class="fa fa-comment-o" aria-hidden="true"></i></a> ${comments}</span>
 				</div>
 		</li>
 		`; 
@@ -59,7 +59,7 @@ function processItem (event) {
 				<div class="col-11 stories" title="go to ${url}">
 					<a href="${item.url}" target="_empty"> <h6>${title}</h6></a>
 					<span class="subtitle"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp; | &nbsp;${item.score} points &nbsp; | &nbsp; by &nbsp;<user>
-					<a href="#user?${item.id}"> ${item.by}</a></user> &nbsp; | &nbsp;<a href="#comments?${item.id}"><i class="fa fa-comment-o" title="tap for comment area" aria-hidden="true"></i></a> ${comments}</span>
+					<a href=""> ${item.by}</a></user> &nbsp; | &nbsp;<a href="#comments?${item.id}"><i class="fa fa-comment-o" title="tap for comment area" aria-hidden="true"></i></a> ${comments}</span>
 				</div>
 		</li>`; 
 	}
