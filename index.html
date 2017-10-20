@@ -21,7 +21,7 @@
 		<div id="app" class="container-fluid col-sm-10 col-md-10 col-lg-8">
 			<!--Navbar-->
 			<nav class="navbar navbar-expand-lg navbar-light orange sticky-top" role="navigation" id="nav">
-			  <a class="navbar-brand" href="#"><i class="fa fa-hacker-news"></i><strong> Hacker News</strong></a>
+			  <a class="navbar-brand" href="#topstories"><i class="fa fa-hacker-news"></i><strong> Hacker News</strong></a>
 			
 			    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#hackernav" aria-controls="hackernav"
 			        aria-expanded="false" aria-label="Toggle navigation">
@@ -31,26 +31,30 @@
 			    <div class="collapse navbar-collapse" id="hackernav">
 			        <div class="navbar-nav mr-auto">
 							<a class="nav-item nav-link" href="#newstories">new</a>
-							<a class="nav-item nav-link" href="#newcomments">comments</a>
+							<a class="nav-item nav-link disabled" href="#newcomments">comments</a>
 							<a class="nav-item nav-link" href="#show">show</a>
 							<a class="nav-item nav-link" href="#ask">ask</a>
 							<a class="nav-item nav-link" href="#jobs">jobs</a>
-							<a class="nav-item nav-link" href="#submit">submit</a>
+							<a class="nav-item nav-link disabled">submit</a>
 			        </div>
-			        <span id="login">
+			        <span id="login" class="disabled">
 			           login
 			        </span>
 			    </div>
 			</nav>
 			
-			<ul class="list-group" id="list">
-			</ul>
+			<ol class="list-group" id="list">
+			</ol>
 			<footer>
 				<i class="fa fa-arrow-down fa-2x text-center" aria-hidden="true"></i>
 			</footer>
 		</div>
 		<script src="./helpers.js"></script>
 		<script src="./app.js"></script>
+		<script src="./ajax.js"></script>
 		<script src="./render.js"></script>
+		<script src="./utilities.js"></script>
+		<script src="./items.js"></script>
+		<script src="./kids.js"></script>
 		<script src="./display.js"></script>
 </html>

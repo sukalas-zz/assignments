@@ -1,100 +1,93 @@
-let data = new Array();
-var rpp = {min:0, max:25};
-var more = false;
-let num = 0;
+//Global Variables
+var data = new Array(); // Global array that holds the items
+var rpp = {min:0, max:25}; // results per page object holder
+var more = false; // Boolean that checks if more button has been pressed
+var num = 0; // List counter Initializer
+let type;
+let itemId;
 
 
-function processStory (event) {
-	let story = JSON.parse(event.currentTarget.response);
-	num++;
-	let list = h.q('.list-group');
-	let comments = 0;
-
-	try{story.kids.length>=1; comments = story.kids.length;}
-	catch(err){}
-
-	list.innerHTML += `
-		<li class='list-group-item'>${num}.
-			<p>
-				<a href="${story.url}" target="_empty">${story.title}</a>
-				<br>
-				<span class="subtitle"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp; | &nbsp;${story.score} points &nbsp; | &nbsp; by <user><a href="#user?${story.by}">${story.by}</a></user> &nbsp; | &nbsp; <i class="fa fa-comment-o" aria-hidden="true"></i> ${comments}</span>
-			</p>
-		</li>
-	`; // Faster than appendChild
-
-	fadeOut(`i`);
-	fadeIn(`#app`);
-	
-	if(rpp.max <= num){
-		fadeIn(`footer`);
-	}
+function parser(event){
+	let itemsList = JSON.parse(event.currentTarget.response);
+	limiter(itemsList)
+	return data.map(renderItem);
 }
 
-function renderStory (storyId) {
-	let getStory = new XMLHttpRequest();
-	getStory.addEventListener('load', processStory);
-	getStory.open('GET', 'https://hacker-news.firebaseio.com/v0/item/' + storyId + '.json');
-	getStory.send();
-}
-
-function cleanUp(){
-	fadeIn(`i`);
-	let prevDataList = h.q(`.list-group`); //Grab the parent of the list
-	while (prevDataList.firstChild && !more) prevDataList.removeChild(prevDataList.firstChild) //Remove previous parsed data list
-}
-
-function limiter(stories){
-	data = stories.slice(rpp.min, rpp.max);
-	return data;
-}
-
-function parser(type, storyId){
-	let storiesList = JSON.parse(event.currentTarget.response);
-	console.log(storiesList)
-	limiter(storiesList)
-	return data.map(renderStory);
-}
-
-function processList (type) {
+function processList(event) {
 	cleanUp();
-	parser();
+	parser(event);
 }
 
 function getter(string, username){
 	"use strict";
+	num = 0;
 	const prefixURL = `https://hacker-news.firebaseio.com/v0`;
-	let urls = {
-		topstories:`${prefixURL}/topstories.json`,
-		newstories:`${prefixURL}/newstories.json`,
-		newcomments:`${prefixURL}/comments.json`,
-		user:`${prefixURL}/user/${username}/submitted.json`
+	
+	const api = {
+		topstories:{
+			url:`${prefixURL}/topstories.json`,
+			type: `topstories`
+		},		
+		newstories:{
+			url:`${prefixURL}/newstories.json`,
+			type: `newstories`
+		},
+		newcomments:{
+			url:`${prefixURL}/newcomments.json`,
+			type: `newcomments`
+		},		
+		show:{
+			url:`${prefixURL}/showstories.json`,
+			type: `show`
+		},		
+		ask:{
+			url:`${prefixURL}/askstories.json`,
+			type: `ask`
+		},		
+		jobs:{
+			url:`${prefixURL}/jobstories.json`,
+			type: `jobs`
+		}
 	}
-
 	let urlReq;
 	let respArr = new Array();
+	const regex = new RegExp("\\?", "g");
 
-	if(string === `newstories`) {
-		urlReq = urls.newstories;
+	if(typeof string !== 'undefined' && !regex.test(string)){
+		// console.log(`Requested hash :${string}`)
+		switch(string){
+			case 'newstories':
+			urlReq = api.newstories.url;
+			type = api.newstories.type;
+			break;
+			case 'newcomments':
+			urlReq = api.topstories.url;
+			type = api.topstories.type;
+			break;
+			case 'show':
+			urlReq = api.show.url;
+			type = api.show.type;
+			break;
+			case 'ask':
+			urlReq = api.ask.url;
+			type = api.ask.type;
+			break;
+			case 'jobs':
+			urlReq = api.jobs.url;
+			type = api.jobs.type;
+			break;
+			default:
+			urlReq = api.topstories.url; // Top stories is the default and homepage
+			type = api.topstories.type; // Top stories is the default and homepage
+		}
+	}else{
+		console.log(`We are entering a specific item page`)
+		const id = string.substr(string.indexOf("?")+1, string.length) // Get the ID after the questionmark
+		urlReq = `https://hacker-news.firebaseio.com/v0/item/${id}/kids.json`;
+		type = `items`;
 	}
-	else if(string === `newcomments`) {
-		urlReq = urls.newcomments;
-	}
-	else if(string === `user`) {
-		urlReq = urls.user;
-	}
-	else {
-		urlReq = urls.topstories; // Top stories
-	}
-
-	let xmlHttp = new XMLHttpRequest();
-
-	xmlHttp.onreadystatechange = function() {
-	    if (xmlHttp.readyState == 4 && xmlHttp.status == 200){
-	    	// respArr = xmlHttp.responseText;
-	    }
-	}
-	xmlHttp.addEventListener('load', processList);
-	xmlHttp.open('GET', urlReq, true); //Asynchronous
-	xmlHttp.send( null );
+	
+	console.log(`Corresponding url: ${urlReq}`)
+	ajax(urlReq)
 }
+
