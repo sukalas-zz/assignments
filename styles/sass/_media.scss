@@ -3,6 +3,11 @@
 }
 
 @media (max-width: 978px) {
+
+	h6{
+		font-size:1.2rem;
+		line-height: 1.5rem;
+	}
     .container {
       padding:0;
       margin:0;
@@ -10,15 +15,31 @@
 
     body {
       padding:0;
-      font-size:20px;
-      line-height:1.5em;
+      font-size:22px;
     }
-	.navbar{
 
-	}
     .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
       margin-left: 0;
       margin-right: 0;
       margin-bottom:0;
     }
+
+    .list-group-item{
+   		padding-top: 1rem;
+	    padding-right: 1rem;
+	    padding-bottom: 0.5rem;
+	    padding-left: 0.75rem;
+	}
+
+	// .questions{
+	// 	top:-1.2em;
+	// 	left:2em;
+	// }
+	// .comments{
+	// 	top:-1.27em !important;;
+	// }
+	.stories{
+		top: -1.125em !important;
+	}
+
 }

@@ -12,19 +12,31 @@ i.fa.fa-circle-o-notch {
   min-width: 500px; }
 
 @media (max-width: 978px) {
+  h6 {
+    font-size: 1.2rem;
+    line-height: 1.5rem; }
+
   .container {
     padding: 0;
     margin: 0; }
 
   body {
     padding: 0;
-    font-size: 20px;
-    line-height: 1.5em; }
+    font-size: 22px; }
 
   .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
     margin-left: 0;
     margin-right: 0;
-    margin-bottom: 0; } }
+    margin-bottom: 0; }
+
+  .list-group-item {
+    padding-top: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.75rem; }
+
+  .stories {
+    top: -1.125em !important; } }
 div {
   line-height: 1.33em; }
 
@@ -47,7 +59,7 @@ i {
   position: absolute;
   left: 0;
   right: 0;
-  transition: opacity .25s; }
+  transition: opacity 0.25s; }
 
 .navbar {
   background-color: rgba(255, 87, 0, 0.45);
